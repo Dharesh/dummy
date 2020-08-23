@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import genric.Base_Page;
-
+//Inheritance : All POM Classes are extending from Base_page 
 public class Login_page extends Base_Page {     //declaration
 	
 @FindBy(xpath="//input[@name='username']")

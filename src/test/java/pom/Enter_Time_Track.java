@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import genric.Base_Page;
-
+//Inheritance : All POM Classes are extending from Base_page 
+//Encapsulation : In POM We have Achived Encapsulation using getters and setters
 public class Enter_Time_Track extends Base_Page {
 @FindBy(xpath = "//a[@class='logout']")
 private WebElement lgout;

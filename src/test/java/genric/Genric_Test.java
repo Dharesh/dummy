@@ -21,14 +21,17 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+//@BM(OA) and @AM(CA) acts like pre and post for all the test scripts
+//@Before Suite this is used to specify suite level condition which is apply to all test scripts
 public class Genric_Test  {
 	File_Manager fm=new File_Manager();
 	public WebDriver driver ;
 	public static ExtentSparkReporter report;
 	public static ExtentReports extent;
-	public static ExtentTest test; //	test contain test case name
-	
+	public static ExtentTest test;   //test contain test case name
+
+//@Before Suite used which is conditions is apply for all the test scripts to generate extent reports 
+//precondition for generate reports	
 	@BeforeSuite 
 	public void setup() 
 	{
@@ -38,6 +41,8 @@ public class Genric_Test  {
     extent=new ExtentReports();
 	extent.attachReporter(report);
 	}
+	
+//@aftersuite : used to p
     @AfterSuite
     public void tearDown() {
     	extent.setSystemInfo("Windows", "10");
@@ -47,6 +52,7 @@ public class Genric_Test  {
    	 extent.flush();
     }
 
+ // @beforemethod used to specify the preconditions  for all the tests
 	@Parameters({"browser"})
      @BeforeMethod
      public void openApp(@Optional("chrome") String browser)
@@ -64,6 +70,9 @@ public class Genric_Test  {
 		driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(fm.getimplicetlyWait(), TimeUnit.SECONDS);
 	  }
+	
+//@afterMethod: this is used to post condition for all tests
+//closing the browser and implemented the Listeners
      @AfterMethod
      public void closeApp(ITestResult res){
     	 System.out.println(res.getStatus());

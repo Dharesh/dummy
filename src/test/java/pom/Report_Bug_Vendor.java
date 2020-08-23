@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import genric.Base_Page;
-
+//Inheritance : All POM Classes are extending from Base_page 
 public class Report_Bug_Vendor extends Base_Page{
 @FindBy(xpath = "//textarea[@id='bug']")
 private WebElement description;

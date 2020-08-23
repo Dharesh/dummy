@@ -13,7 +13,8 @@ import pom.Enter_Time_Track;
 import pom.Login_page;
 import pom.Report_Bug_Vendor;
 
-
+//Inheritance : All Test Clases Classes are extending  Genric_test
+//Test classes includes test scripts
 public class Regression extends Genric_Test {
 
 @Test
